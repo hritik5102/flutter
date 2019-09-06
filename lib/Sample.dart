@@ -26,10 +26,20 @@ class StackState extends State<Sample>{
           Stack(
             children: <Widget>[
               Container(
-                height: MediaQuery.of(context).size.height * 0.38,
+                height: MediaQuery.of(context).size.height * 0.35,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(100,200,300,1),
+                  gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                      stops: [0.1, 0.5, 0.7, 0.9],
+                    colors: [
+                      Colors.indigo[800],
+                      Colors.indigo[700],
+                      Colors.indigo[600],
+                      Colors.indigo[500],
+                    ]
+                  ),
                   borderRadius:BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30),
@@ -94,23 +104,33 @@ class StackState extends State<Sample>{
               ),
             ),
           ),
-          FloatingActionButton(
-            backgroundColor: Colors.blue,
-            child: Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              child: Align(
-                alignment: Alignment.center,
-                child: Icon(
-                  Icons.call_end
+          Align(
+            alignment: Alignment.centerRight,
+                child:Container(
+                  margin: new EdgeInsets.only(
+                    right: 4,
+                    bottom: 5
+                  ),
+                  child:FloatingActionButton(
+                    backgroundColor: Colors.red,
+                  child: Container(
+                    color: Colors.blue,
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Icon(
+                        Icons.call_end
+                      ),
+                    ),
+                   ),
+                  onPressed: (){
+                    print("this is pressed call ended");
+                    Navigator.of(context);
+                  },
                 ),
-              ),
-             ),
-            onPressed: (){
-              print("this is pressed call ended");
-              Navigator.of(context);
-            },
-          ),
+                )
+          )
         ],
       ),
       );

@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget{
       return MaterialApp(
         title: "te pixel 3 app",
         home: Scaffold(
-          backgroundColor: Colors.cyanAccent,
           drawer: Drawer(
             child: ListView(
               children: <Widget>[
@@ -79,8 +78,23 @@ class MyApp extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Center(
-                    child: Icon(Icons.call_end),
+                  Container(
+
+                  child:DecoratedBox(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.topRight,
+                          stops: [0.1, 0.5, 0.7, 0.9],
+                          colors: [
+                            Colors.blue[800],
+                            Colors.blue[700],
+                            Colors.blue[600],
+                            Colors.blue[500],
+                          ]
+                        )
+                      ),
+                  )
                   )
                 ],
               ),
