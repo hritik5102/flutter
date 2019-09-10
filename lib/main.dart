@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Sample.dart';
 import 'package:vector_math/vector_math_lists.dart';
-import 'dart:math';
-import 'dart:async';
+import 'package:flutter/animation.dart';
 import 'package:flutter_app/Data.dart';
 //firebase stuff
 
@@ -83,6 +82,38 @@ class MyApp extends StatelessWidget {
                           )))
                 ],
               ),
+              ListBody(
+                children: <Widget>[
+                  DecoratedBox(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                          end: Alignment.topRight,
+                          stops: [0.2,0.4,0.6,1],
+                          colors:[
+                            Colors.deepPurpleAccent[500],
+                            Colors.deepPurpleAccent[600],
+                            Colors.deepPurpleAccent[700],
+                            Colors.deepPurpleAccent[800],
+                          ]
+                    ),
+                  ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "the data main page",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "cursoive",
+                          decoration: TextDecoration.none
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ),

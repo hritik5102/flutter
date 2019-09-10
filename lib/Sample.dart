@@ -60,37 +60,101 @@ class StackState extends State<Sample> {
             ],
           ),
 //               use of align widget for custom alignment inside the container box of defined height
-          Column(
-            children: <Widget>[
-              Container(
-                margin: new EdgeInsets.all(8),
-                padding: EdgeInsets.only(left: 8, top: 10),
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: Icon(Icons.call_end),
-                ),
-              ),
-              Container(
-                margin: new EdgeInsets.all(8),
-                padding: EdgeInsets.only(left: 8, top: 10),
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: Icon(
-                    Icons.call_end,
-                  ),
-                ),
-              )
-            ],
-          ),
 
           Expanded(
             child: Container(
-              child: Center(
-                child: Text(
-                  "go back",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.blue),
-                ),
+              margin: const EdgeInsets.only(bottom: 15),
+              height: MediaQuery.of(context).size.height*3,
+              child: ListView(
+                scrollDirection: Axis.vertical,
+                children: <Widget>[
+                  Container(
+                    width: 175,
+                    color: Color.fromARGB(50,200,255,1),
+                    child: Center(
+                      child: Text(
+                        "The recent post",
+                        style: TextStyle(
+                          fontSize: 30,
+
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.all(10),
+                    height: 40,
+                    width: 175,
+                    color: Colors.green,
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        children: <Widget>[
+                          Text("The flutter app demo"),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text("Vedang",style: TextStyle(fontWeight: FontWeight.bold,fontFamily: "cursive",fontSize: 20),),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.all(10),
+                    height: 40,
+                    width: 175,
+                    color: Color.fromARGB(101,201,301,1),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        children: <Widget>[
+                          Text("The React app demo"),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text("Andrew",style: TextStyle(fontWeight: FontWeight.bold,fontFamily: "cursive",fontSize: 20),),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.all(10),
+                    height: 40,
+                    width: 175,
+                    color: Colors.blue,
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        children: <Widget>[
+                          Text("The Vue app demo"),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text("Matt",style: TextStyle(fontWeight: FontWeight.bold,fontFamily: "cursive",fontSize: 20),),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.all(10),
+                    height: 40,
+                    width: 175,
+                    color: Colors.red,
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        children: <Widget>[
+                          Text("The NodeJs app demo"),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text("Henry",style: TextStyle(fontWeight: FontWeight.bold,fontFamily: "cursive",fontSize: 20),),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
           ),
@@ -106,7 +170,7 @@ class StackState extends State<Sample> {
                     width: MediaQuery.of(context).size.width,
                     child: Align(
                       alignment: Alignment.center,
-                      child: Icon(Icons.call_end),
+                      child: Icon(Icons.search),
                     ),
                   ),
                   onPressed: () {
